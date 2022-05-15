@@ -21,7 +21,7 @@ func searchFile(root string, filename string) {
 	for _, file := range files {
 		if strings.Contains(file.Name(), filename) {
 			mutex.Lock()
-			result = append(result, filepath.Join(root, filename))
+			result = append(result, filepath.Join(root, file.Name()))
 			mutex.Unlock()
 		}
 		if file.IsDir() {
